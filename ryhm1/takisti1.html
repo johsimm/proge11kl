@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Takisti</title>
+    <script src="takisti1.js"></script>
+    <script>
+        let r1;
+        function startPage(){
+           r1=new Resistor(110, canvas1.getContext("2d"), 50, 150, 50);  
+           range1.value=r1.getR();         
+           range2.value=r1.getU();         
+        }
+    </script>
+    <meta charset="utf-8">
+  </head>
+  <body onload="startPage()">
+      <canvas id="canvas1" width="4000" height="1000"></canvas><br />
+     Takistus: <input type="range" id="range1" min="100" max="1000" onclick="r1.setR(this.valueAsNumber); s1.innerText=this.value;" />
+               <span id="s1"></span><br />
+     Pinge:  <input type="range" id="range2" min="0" max="12" onclick="r1.setU(this.valueAsNumber); s2.innerText=this.value" />
+             <span id="s2"></span>
+  </body>
+</html>
